@@ -68,9 +68,9 @@ void gamePlay() {
 
             //checking if you win
             if (totalNumber == 100){
-                cout << "You win!!!";
+                cout << "You win!!!" << endl;
             } else if (totalNumber > 100){
-                cout << "You win!!!";
+                cout << "You win!!!" << endl;
             }
 
 
