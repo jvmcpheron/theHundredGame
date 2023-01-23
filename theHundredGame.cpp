@@ -5,11 +5,14 @@ Jane McPheron
 */
 
 #include <iostream>
-#include <iomanip>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 int main(){
 
+    //code to generate random number between 1 and 10
+    cout << (rand() % 10) + 1<<" ";  
 
 }
 
