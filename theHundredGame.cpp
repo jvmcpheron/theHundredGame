@@ -53,7 +53,12 @@ void gamePlay() {
                 //checks for valid entry
                 if (playerChoice > 0){
                     if (playerChoice < 11){
-                        okNum = true;
+                        if (totalNumber + playerChoice > 100){
+                            okNum = true;
+                        }else {
+                            okNum = false;
+                            cout << "Not a valid number!" << endl;
+                        }    
                     } else{
                         okNum = false;
                         cout << "Not a valid number!" << endl;
@@ -95,6 +100,7 @@ void gamePlay() {
 int main(){
 
     gamePlay();
+    cout << "Thanks for playing!" << endl;
 
 }
 

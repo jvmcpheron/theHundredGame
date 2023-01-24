@@ -6,7 +6,8 @@ The 100 game is a simple variant of Nim.  You and your opponent start with a joi
 
 Some things to note:
 
-- Your computer version should generate random guesses unless the current total is 90-99.  Then - it should pick whatever number will let it win.
+- Your computer version should generate random guesses unless the current total is 90-99.  Then 
+  it should pick whatever number will let it win.
 - You may assume all of the inputs will be integers, but you should include checks to make sure 
   the integers they enter are legal (e.g., you should check if they selected a legal choice, did they pick a number not between 1 and 10, will their number put the total over 100, etc.).
 - You should let the player decide who is going to go first.
