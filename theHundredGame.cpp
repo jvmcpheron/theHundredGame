@@ -17,13 +17,46 @@ void gamePlay() {
 
     //declaring varables
     string playAgain;
+    string playerFirst;
     int totalNumber;
     int random;
     int playerChoice;
     bool okNum;
+    int tempSum;
 
     totalNumber = 0;
 
+    cout << "Would you like to go first?(y/n)";
+    cin >> playerFirst;
+
+    //checking if player wants to go first
+    if (playerFirst == "y"){
+        okNum = false;
+        //player's turn
+        while (okNum != true){
+            cout << "Pick a number 1-10: ";
+            cin >> playerChoice;
+
+            //checks for valid entry
+            if (playerChoice > 0){
+                if (playerChoice < 11){
+                    okNum = true;
+                } else{
+                    okNum = false;
+                    cout << "Not a valid number!" << endl;
+                }   
+            } else{
+                okNum = false;
+                cout << "Not a valid number!" << endl;
+            }
+        }
+        totalNumber += playerChoice;
+        cout << "The current total is: " << totalNumber << endl;
+    }
+
+
+
+    //game loop
     while (totalNumber < 100) {
 
 
@@ -34,7 +67,7 @@ void gamePlay() {
 	        random = 1 + rand()%10;
 	
         } else{
-            //placeholder for computer win code
+            //code for winning number
             random = 100 - totalNumber;
         }
 
@@ -49,11 +82,12 @@ void gamePlay() {
             while (okNum != true){
                 cout << "Pick a number 1-10: ";
                 cin >> playerChoice;
+                tempSum = playerChoice + totalNumber;
 
                 //checks for valid entry
                 if (playerChoice > 0){
                     if (playerChoice < 11){
-                        if (totalNumber + playerChoice > 100){
+                        if (tempSum < 101){
                             okNum = true;
                         }else {
                             okNum = false;
@@ -77,11 +111,6 @@ void gamePlay() {
             } else if (totalNumber > 100){
                 cout << "You win!!!" << endl;
             }
-
-
-
-
-
         } else {
             cout << "You lost!" << endl;
         }
